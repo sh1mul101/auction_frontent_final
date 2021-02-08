@@ -1,5 +1,6 @@
 <template>
-  <div class="hellouser">
+  <body>
+      <div class="hellouser">
       <body class="h-screen bg-green-100">
           <Header />
           <NavUser />
@@ -9,6 +10,7 @@
           </div>
       </body>
   </div>
+  </body>
 </template>
 
 <script>

@@ -36,6 +36,25 @@ const routes = [
     component: () => import("../views/HelloUser.vue"),
   },
 
+  {
+    path: "/usertable",
+    name: "UserTable",
+    component: () => import("../views/UserTable.vue"),
+  },
+
+  {
+    path: "/auctionadd",
+    name: "AuctionAdd",
+    component: () => import("../views/AuctionAdd.vue"),
+  },
+
+  {
+    path: "/userprofile",
+    name: "UserProfile",
+    component: () => import("../views/UserProfile.vue"),
+  },
+
+
 ];
 
 const router = createRouter({

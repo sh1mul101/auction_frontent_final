@@ -1,13 +1,13 @@
 <template>
-  <form @submit.prevent="handleSubmit">
-    <div class="login">
-      <body class=" bg-white flex-1 font-sans ">
+  <body class=" bg-white flex-1 font-sans ">
+    <div class="">
+      <form @submit.prevent="handleSubmit" >
         <div class="flex flex-col items-center justify-center">
           <div class="pt-12">
             <router-link to="/" class="text-4xl font-semibold font-sans uppercase text-green-200">Auction
             </router-link>
           </div>
-          <div class="w-full md:w-1/3 lg:w-1/4 border-2 border-green-200 m-4 rounded-xl shadow-xl">
+          <div class=" w-full md:w-1/3 lg:w-1/4 border-2 border-green-200 m-4 rounded-xl shadow-xl">
             <div v-if="error" class="bg-red-900 border-orange-500 text-white p-3 rounded-t-xl" role="alert">
                 <p class="font-bold">Fuck You!!</p>
                 {{error}}
@@ -66,11 +66,11 @@
               </p>
             </div>
             <hr class="my-2 mx-6 pb-2" />
-          </div>
         </div>
-      </body>
-  </div>
-  </form>
+      </div>
+    </form>
+    </div>
+  </body>
 </template>
 
 <script>
@@ -98,7 +98,7 @@ export default {
 
       localStorage.setItem('token',response.data.token);
       this.$store.dispatch('user', response.data.user);
-      this.$router.push('/');
+      this.$router.push('/hellouser');
       }
       catch (e){
           this.error = 'Invalid Email or Password!'

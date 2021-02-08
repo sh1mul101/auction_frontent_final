@@ -9,7 +9,6 @@
             <button
               class="flex items-center justify-center hover:text-green-200 focus:outline-none"
             >
-              <i class="material-icons mt-1">menu</i>
               <span class="px-1">Categories</span>
               <i class="material-icons mt-1">arrow_drop_down</i>
             </button>
@@ -48,10 +47,8 @@
             </div>
           </div>
           <div class="flex">
-          <a href="javascript:void(0)" @click="handleClick" class="flex items-center justify-center hover:text-green-200"
-            >
-            <span class="px-1 mb-1">Sign Out</span></a
-          >
+            <AddUrAuctionBtn />
+            <ThreeDotUser />
           </div>
         </nav>
       </div>
@@ -59,17 +56,16 @@
 
 <script>
 import {mapGetters} from "vuex"
+import ThreeDotUser from "./ThreeDotUser"
+import AddUrAuctionBtn from "./AddUrAuctionBtn"
 export default {
-    name: "NavUser",
-    methods: {
-        handleClick() {
-            localStorage.removeItem('token');
-            this.$store.dispatch('user', null);
-            this.$router.push('/')
-        }
-    },
-    computed: {
-        ...mapGetters(['user'])
-    }
+  name: "NavUser",
+  components: {
+    ThreeDotUser,
+    AddUrAuctionBtn,
+  },
+  computed: {
+      ...mapGetters(['user'])
+  }
 }
 </script>

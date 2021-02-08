@@ -10,10 +10,6 @@
           </router-link>
         </div>
         <div class="w-full md:w-1/3 border-2 border-green-200 m-4 rounded-xl shadow-xl">
-          <div v-if="error" class="bg-red-900 border-orange-500 text-white p-3 rounded-t-xl" role="alert">
-              <p class="font-bold">Fuck You!!</p>
-              {{error}}
-          </div>
           <h1 class="font-sans text-gray-500 text-center text-2xl p-4">
             Create an Account
           </h1>
@@ -181,6 +177,10 @@
                 >
                   Create your account
                 </button>
+          <div v-if="error" class="bg-red-900 border-orange-500 text-white p-3 rounded-t-xl" role="alert">
+              <p class="font-bold">Fuck You!!</p>
+              {{error}}
+          </div>
               </div>
               <div class="text-center pt-2">
                 <p class="text-gray-900 text-sm">
