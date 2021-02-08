@@ -47,7 +47,7 @@
               </router-link>
             </div>
           </div>
-          <div class="flex">
+          <div v-if="user==null" class="flex">
             <router-link to="/login" class="flex items-center justify-center px-2 hover:text-green-200"
             >
             <span class="px-1 mb-1">Sign In</span></router-link
@@ -57,12 +57,29 @@
             <span class="px-1 mb-1">Sign Up</span></router-link
           >
           </div>
+          <div v-else class="flex">
+          <a href="javascript:void(0)" @click="handleClick" class="flex items-center justify-center hover:text-green-200"
+            >
+            <span class="px-1 mb-1">Sign Out</span></a
+          >
+          </div>
         </nav>
       </div>
 </template>
 
 <script>
+import {mapGetters} from "vuex"
 export default {
-    name: "Nav",
+  name: "Nav",
+  methods: {
+      handleClick() {
+          localStorage.removeItem('token');
+          this.$store.dispatch('user', null);
+          this.$router.push('/')
+      }
+  },
+  computed: {
+      ...mapGetters(['user'])
+  }
 }
 </script>
